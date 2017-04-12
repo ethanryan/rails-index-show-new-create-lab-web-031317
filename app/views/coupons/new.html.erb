@@ -1,0 +1,23 @@
+<h1>New Coupon Form</h1>
+
+This is the new Coupon Form page.
+
+<%= form_tag coupons_path do %>
+<!-- above line needs to be: form_tag '/students'
+or students_path (as in, resources :students)
+not student_path(@student)... that redirect is set in the controller action -->
+
+  <label>Coupon coupon_code:</label><br>
+  <%= text_field_tag :coupon_code %><br>
+  <!-- above line can be :first_name or 'first_name' -->
+
+
+  <label>Coupon store:</label><br>
+  <%= text_field_tag :store %><br>
+  <!-- above line can be :last_name or 'last_name' -->
+
+
+  <%= submit_tag "Submit Coupon" %>
+  <% end %>
+
+  <%= params.inspect %>
